@@ -1,10 +1,14 @@
 #!/bin/sh
 
+set -e
+
 podspec=`find . -type f -iname *.podspec | xargs basename`
+echo "podspec: $podspec"
 
 set_version() {
     # Geting version from tag
     version=`git describe --abbrev=0 --tags`
+    echo "version: $version"
     # Change version in podspec
     sed -i '.bak' 's/    s.version       = .*/    s.version       = "'$version'"/' $podspec
 }
