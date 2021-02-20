@@ -1,16 +1,18 @@
 #!/bin/sh
 
+podspec=`find . -type f -iname *.podspec | xargs basename`
+
 set_version() {
     # Geting version from tag
     version=`git describe --abbrev=0 --tags`
     # Change version in podspec
-    sed -i '.bak' 's/    s.version       = .*/    s.version       = "'$version'"/' *.podspec
+    sed -i '.bak' 's/    s.version       = .*/    s.version       = "'$version'"/' $podspec
 }
 
 reset_podspec() {
     # Back to primary
-    git checkout *.podspec
-    rm *.podspec.bak
+    git checkout $podspec
+    rm $podspec.bak
 }
 
 if [ "$1" == "lint" ]; then
@@ -19,7 +21,7 @@ if [ "$1" == "lint" ]; then
     reset_podspec
 elif [ "$1" == "push" ]; then
     set_version
-    pod trunk push *.podspec
+    pod trunk push $podspec
     reset_podspec
 else
     GREEN='\033[0;32m'
