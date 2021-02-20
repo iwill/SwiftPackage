@@ -2,7 +2,8 @@
 
 set -e
 
-podspec=`find . -type f -iname *.podspec | xargs basename`
+# podspec=`find . -type f -iname *.podspec | xargs basename`
+podspec="SwiftPackage.podspec"
 echo "podspec: $podspec"
 
 set_version() {
