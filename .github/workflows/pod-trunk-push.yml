@@ -1,0 +1,21 @@
+name: Pod Trunk Push
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  pod_trunk_push:
+    runs-on: macos-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: pod trunk push
+        uses: maxep/pod-repo-push-action@0.1.2
+        with:
+          repo-url: https://maxep:${{ secrets.ACCESS_TOKEN }}@github.com/maxep/cocoapods-specs.git
