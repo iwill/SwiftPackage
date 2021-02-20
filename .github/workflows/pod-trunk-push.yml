@@ -13,4 +13,4 @@ jobs:
       - name: pod trunk push
         uses: maxep/pod-repo-push-action@0.1.2
         with:
-          repo-url: https://maxep:${{ secrets.ACCESS_TOKEN }}@github.com/maxep/cocoapods-specs.git
+          repo-url: https://github.com/CocoaPods/Specs.git
