@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     
     # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.name          = "SwiftPackage"
-    s.version       = "0.0.1"
+    s.version       = "0.0.2"
     s.summary       = "SwiftPackage Test"
     # s.description   = "SwiftPackage Test."
     s.homepage      = "https://github.com/iwill/SwiftPackage"
