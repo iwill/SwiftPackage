@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
     # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.name          = "SwiftPackage"
     # export LIB_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)
-    s.version       = ENV["LIB_VERSION"] || "0.0.4"
+    s.version       = ENV["LIB_VERSION"] || "0.0.6"
     s.summary       = "SwiftPackage Test"
     # s.description   = "SwiftPackage Test."
     s.homepage      = "https://github.com/iwill/SwiftPackage"
