@@ -17,4 +17,5 @@ jobs:
     - run: swift test --enable-test-discovery --enable-code-coverage
     - uses: mattpolzin/swift-codecov-action@0.6.0
       with:
-        MINIMUM_COVERAGE: 98
+        # MINIMUM_COVERAGE: 98
+        SORT_ORDER: filename # filename, +cov, -cov
