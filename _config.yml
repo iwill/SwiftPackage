@@ -1,4 +1,6 @@
 theme: jekyll-theme-cayman
 title: SwiftPackage
-subtitle: Test SwiftPackage
-cover-img: "/ExCodable-1920x500.png"
+
+# does not work
+# subtitle: Test SwiftPackage
+# cover-img: "/ExCodable-1920x500.png"
