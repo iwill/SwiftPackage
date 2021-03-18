@@ -10,7 +10,7 @@ title: SwiftPackage
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
 
-navbar-img: "https://iwill.im/images/ExCodable-1920x500.png"
+navbar-img: "/ExCodable-1920x500.png"
 #footer-img: "/assets/img/bgimage.png"
 #page-img: "/assets/img/bgimage.png"
 
