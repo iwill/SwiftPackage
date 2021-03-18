@@ -2,4 +2,4 @@ theme: jekyll-theme-cayman
 title: SwiftPackage
 subtitle: Test SwiftPackage
 cover-img: "/ExCodable-1920x500.png"
-css: style.css
+# css: "/assets/css/style.scss"
