@@ -18,6 +18,9 @@ jobs:
         with:
           format: dd
           utcOffset: "+08:00"
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%a')"
       - name: generate github-snake.svg
         uses: Platane/snk/svg-only@v2
         with:
@@ -27,6 +30,7 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark
             dist/github-snake-${{ env.action_state }}.svg?color_snake=${{ env.action_state }}
             dist/github-snake-${{ steps.current-time.outputs.formattedTime }}.svg?color_snake=white
+            dist/github-snake-${{ steps.date.outputs.date }}.svg?color_snake=magenta
       - name: push github-snake.svg to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
