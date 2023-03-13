@@ -8,26 +8,15 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Test
-        id: test
-        run: echo "::set-output name=string::$(echo 'red-green-blue-yellow-cyan-magenta-black'-`date +%u`)"
       - name: Generate color for day of week
         id: color
-        run: echo "::set-output name=color::$(echo 'red green blue yellow cyan magenta black' | cut -wf `date +%u`)"
+        run: echo "::set-output name=color::$(echo 'red green blue yellow cyan magenta black' | cut -d ' ' -f `date +%u`)"
       - name: generate github-snake.svg
         uses: Platane/snk/svg-only@v2
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake-red.svg?color_snake=red
-            dist/github-snake-green.svg?color_snake=green
-            dist/github-snake-blue.svg?color_snake=blue
-            dist/github-snake-yellow.svg?color_snake=yellow
-            # dist/github-snake-cyan.svg?color_snake=cyan
-            # dist/github-snake-magenta.svg?color_snake=magenta
-            dist/github-snake-black.svg?color_snake=black
             dist/github-snake-today.svg?color_snake=${{ steps.color.outputs.color }}
-            dist/github-snake-${{ steps.test.outputs.string }}.svg?color_snake=purple
       - name: push github-snake.svg to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
